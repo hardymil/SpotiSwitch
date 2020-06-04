@@ -1,12 +1,13 @@
 import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux'
-import {getGenres, delateGenres} from '../../actions/genres'
-import {Link} from 'react-router-dom'
+import {useDispatch, useSelector} from 'react-redux';
+import {getGenres, delateGenres} from '../../actions/genres';
+import {Link} from 'react-router-dom';
 import { StyledDiv, StyledButton, StyledTitle, StyledLink } from './styles';
 
 const Genres = () => {
   const dispatch = useDispatch()
   const genres = useSelector(state => state.genres.genres)
+  console.log(genres);
   useEffect(() => {
     dispatch(getGenres())
   }, [])
