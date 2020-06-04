@@ -9,7 +9,7 @@ const submit = (e, formState, setErrorMessage, history) => {
     return
   } else {
     localStorage.setItem('token', 'OK')
-    history.push('/home')
+    history.push('/genres')
   }
 }
 
@@ -19,7 +19,7 @@ const Login = props => {
     console.log('Login -> props', props)
     console.log(token)
     if (token) {
-      props.history.push('/home')
+      props.history.push('/genres')
     }
   }, [])
   return <Signin submit={submit}></Signin>
