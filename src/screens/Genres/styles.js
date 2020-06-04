@@ -29,7 +29,6 @@ export const StyledButton = styled.button`
 
 export const StyledTitle = styled.h1`
   text-align: center;
-
   font-size: 22px;
 `
 
