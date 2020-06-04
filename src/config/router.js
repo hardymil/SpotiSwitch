@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom'
 
 import Login from '../screens/login'
-import Home from '../screens/home'
 import PrivateRoute from '../utils/privateRoute'
 import Genres from '../screens/Genres/index'
 import Musics from '../screens/Musics/index'

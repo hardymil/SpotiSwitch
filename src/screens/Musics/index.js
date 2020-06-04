@@ -15,15 +15,21 @@ const StyledFlex = styled.section`
   max-width: 1440px;
   margin: auto;
 `
-const Musics = () => {
+const Musics = props => {
   const dispatch = useDispatch()
   const musics = useSelector(state => state.genres.musics)
   useEffect(() => {
     dispatch(getMusics())
   }, [])
   console.log(musics)
+  console.log("Musics -> props", props)
+  const redirectToLogin = () => {
+    localStorage.removeItem('token')
+    props.history.push('/login')
+  }
   return (
     <div>
+      <button onClick={() => redirectToLogin()}>Deconnexion</button>
       <StyledTitle>Notre selection musicale que nous avons choisi pour vous :</StyledTitle>
       <StyledFlex>
         {musics.map(music => (
