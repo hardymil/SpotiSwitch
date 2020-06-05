@@ -5,6 +5,7 @@ export const StyledDiv = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap:wrap;
+  margin-bottom:70px;
 `
 
 export const StyledButton = styled.button`
@@ -35,6 +36,7 @@ export const StyledTitle = styled.h1`
 export const StyledLink = styled.button`
     background-color:#06A800;
     position:fixed;
+    left:0;
     bottom:0;
     border:none;
     text-align:center;

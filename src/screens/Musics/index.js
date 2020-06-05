@@ -14,7 +14,8 @@ const StyledFlex = styled.section`
   justify-content: space-between;
   flex-wrap:wrap;
   max-width: 1440px;
-  margin: auto;
+  margin: 0 auto 70px auto;
+
 `
    
 const StyledDeconnect = styled.button`
