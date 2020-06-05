@@ -4,8 +4,9 @@ import Routes from './config/router'
 import { ThemeProvider } from 'styled-components'
 import { lightTheme, darkTheme } from './config/theme'
 import {GlobalStyles} from './config/global'
-import {Provider} from 'react-redux'
+import {useDispatch, useSelector, Provider} from 'react-redux'
 import {store} from './config/store'
+// import {translation} from "./I18n/i18n";
 import ToggleTheme from './components/ToggleTheme'
 
 function App() {
@@ -17,11 +18,22 @@ function App() {
       setTheme('light');
     }
   }
+
+  // const lang = useSelector(state=> state.languageReducer.language);
+  // const dispatch = useDispatch();
+  
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         <GlobalStyles />
         <ToggleTheme theme={theme} toggleTheme={toggleTheme}/>
+        {/* <div>
+          <button  onClick={(()=>dispatch({type:'fr'}))}>français</button>
+          <button  onClick={(()=>dispatch({type:'en'}))}>anglais</button>
+        </div>    
+        <div className='titre'>
+            <h1>{translation(lang,"see")}</h1>
+        </div>   */}
         <Routes/>
       </ThemeProvider>
     </Provider>
