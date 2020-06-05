@@ -8,6 +8,7 @@ import {useDispatch, useSelector, Provider} from 'react-redux'
 import {store} from './config/store'
 // import {translation} from "./I18n/i18n";
 import ToggleTheme from './components/ToggleTheme'
+import { Notifications } from 'react-push-notification';
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -24,6 +25,7 @@ function App() {
   
   return (
     <Provider store={store}>
+      <Notifications />
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         <GlobalStyles />
         <ToggleTheme theme={theme} toggleTheme={toggleTheme}/>

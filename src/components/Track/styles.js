@@ -7,6 +7,9 @@ export const StyledCard= styled.article`
   margin: 20px auto;
   position: relative;
   box-shadow: #888888 0 5px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 export const StyledTitle = styled.p`

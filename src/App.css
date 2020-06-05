@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+.rhap_controls-section {
+  justify-content: center !important;
+}
+
+.rhap_container {
+  position: relative;
+  width: 300px!important;
+  box-shadow: none!important;
+}
+
+.rhap_time, .rhap_volume-bar-area, .rhap_additional-controls {
+  display: none !important;
+}
+
+.rhap_volume-controls {
+  display: block !important;
+  position: absolute;
+  right: 0;
+}
+
+.rhap_progress-indicator, .rhap_progress-filled {
+  background: #EC5164 !important;
+}
+
+.rhap_download-progress {
+  background-color: #f3f3f3!important;
+}
+
+.rhap_main-controls-button, .rhap_volume-button {
+  color: #EC5164!important;
+}

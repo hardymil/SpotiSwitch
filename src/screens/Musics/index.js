@@ -57,6 +57,7 @@ const Musics = props => {
               albumImage={music.albumId}
               track={music.name}
               artist={music.artistName}
+              previewUrl={music.previewURL}
             />
         ))}
       </StyledFlex>

@@ -4,6 +4,17 @@ import {getGenres, delateGenres} from '../../actions/genres';
 import {Link} from 'react-router-dom';
 import { StyledDiv, StyledButton, StyledTitle, StyledLink, StyledDeconnect } from './styles';
 import { ReactComponent as Disconnect } from '../../assets/img/turn-off.svg';
+import addNotification from 'react-push-notification';
+
+const buttonClick = () => {
+  addNotification({
+      title: 'SpotiSwitch',
+      subtitle: 'Félicitaion !',
+      message: 'Parmi tous les genres musicaux que vous avez sélectionnés, vous ne découvriez aucune musique de ces genres. Enjoy !',
+      theme: 'darkblue',
+      native: true
+  });
+};
 
 const Genres = props => {
   const dispatch = useDispatch()
@@ -34,7 +45,7 @@ const Genres = props => {
           </StyledButton>
         ))}
       </StyledDiv>
-      <StyledLink>
+      <StyledLink onClick={buttonClick}>
         <Link to='/musics'>Next</Link>
       </StyledLink>
     </div>
