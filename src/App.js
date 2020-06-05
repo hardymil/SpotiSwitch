@@ -6,7 +6,7 @@ import { lightTheme, darkTheme } from './config/theme'
 import {GlobalStyles} from './config/global'
 import {Provider} from 'react-redux'
 import {store} from './config/store'
-import DarkMode from './components/DarkMode'
+import ToggleTheme from './components/ToggleTheme'
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -20,8 +20,8 @@ function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-        <button onClick={toggleTheme}>Toggle theme</button>
-        {/* <DarkMode onClick={toggleTheme}/> */}
+        <GlobalStyles />
+        <ToggleTheme theme={theme} toggleTheme={toggleTheme}/>
         <Routes/>
       </ThemeProvider>
     </Provider>
