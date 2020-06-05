@@ -2,7 +2,8 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getGenres, delateGenres} from '../../actions/genres';
 import {Link} from 'react-router-dom';
-import { StyledDiv, StyledButton, StyledTitle, StyledLink } from './styles';
+import { StyledDiv, StyledButton, StyledTitle, StyledLink, StyledDeconnect } from './styles';
+import { ReactComponent as Disconnect } from '../../assets/img/turn-off.svg';
 
 const Genres = props => {
   const dispatch = useDispatch()
@@ -19,7 +20,7 @@ const Genres = props => {
   }
   return (
     <div>
-      <button onClick={() => redirectToLogin()}>Deconnexion</button>
+      <StyledDeconnect onClick={() => redirectToLogin()}><Disconnect/></StyledDeconnect>
       <StyledTitle>
         Choisissez la liste des genres que vous appréciez
       </StyledTitle>

@@ -47,3 +47,21 @@ export const StyledLink = styled.button`
         text-decoration:none;
       }
     `
+    
+export const StyledDeconnect = styled.button`
+  width:25px;
+  height:100px;
+  background: transparent;
+  border:0;
+  color:#fff;
+  position:fixed;
+  top:-30px;
+  left:15px;
+  cursor:pointer;
+  transition: all 0.25s linear;
+  svg{
+    padding:13px 10px;
+    width:25px;
+    height:100%;
+  }
+`;

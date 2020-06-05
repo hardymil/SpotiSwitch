@@ -4,7 +4,7 @@ export const StyledCard= styled.article`
   max-width:300px;
   border: 1px #b3b3b3 solid;
   border-radius: 5px;
-  margin: 20px;
+  margin: 20px auto;
   position: relative;
   box-shadow: #888888 0 5px 20px;
 `

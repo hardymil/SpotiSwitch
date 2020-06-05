@@ -9,9 +9,10 @@ export const ToggleContainer = styled.button`
   top:15px;
   right:15px;
   cursor:pointer;
+  z-index:10000;
   transition: all 0.25s linear;
   &:hover{
-    border-radius:0;
+    box-shadow:${({ lightTheme }) => lightTheme ?  '#140B58' : ' #f1f1f1'} 0 0px 12px;
   }
   svg{
     padding:13px 10px;
