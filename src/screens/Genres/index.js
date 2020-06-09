@@ -5,12 +5,14 @@ import {Link} from 'react-router-dom';
 import { StyledDiv, StyledButton, StyledTitle, StyledLink, StyledDeconnect } from './styles';
 import { ReactComponent as Disconnect } from '../../assets/img/turn-off.svg';
 import addNotification from 'react-push-notification';
+import '../../config/i18n'
+import {useTranslation} from 'react-i18next'
 
 const buttonClick = () => {
   addNotification({
       title: 'SpotiSwitch',
       subtitle: 'Félicitaion !',
-      message: 'Parmi tous les genres musicaux que vous avez sélectionnés, vous ne découvriez aucune musique de ces genres. Enjoy !',
+      message: 'Parmi tous les genres musicaux que vous avez sélectionnés, vous ne découvriez aucune musique de ces genres. Prendre plaisir !',
       theme: 'darkblue',
       native: true
   });
@@ -29,11 +31,15 @@ const Genres = props => {
     localStorage.removeItem('token')
     props.history.push('/login')
   }
+
+  const {t,i18n} = useTranslation()
   return (
     <div>
       <StyledDeconnect onClick={() => redirectToLogin()}><Disconnect/></StyledDeconnect>
       <StyledTitle>
-        Choisissez la liste des genres que vous appréciez
+      <div>
+          <h1>{t('choose')}</h1>
+      </div>
       </StyledTitle>
       <StyledDiv>
         {genres.map(genre => (
@@ -46,7 +52,7 @@ const Genres = props => {
         ))}
       </StyledDiv>
       <StyledLink onClick={buttonClick}>
-        <Link to='/musics'>Next</Link>
+        <Link to='/musics'>{t('next')}</Link>
       </StyledLink>
     </div>
   );

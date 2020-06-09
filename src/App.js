@@ -6,9 +6,10 @@ import { lightTheme, darkTheme } from './config/theme'
 import {GlobalStyles} from './config/global'
 import {useDispatch, useSelector, Provider} from 'react-redux'
 import {store} from './config/store'
-// import {translation} from "./I18n/i18n";
 import ToggleTheme from './components/ToggleTheme'
 import { Notifications } from 'react-push-notification';
+import { useTranslation } from 'react-i18next';
+import {StyledTitle} from './screens/Genres/styles'
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -20,22 +21,20 @@ function App() {
     }
   }
 
-  // const lang = useSelector(state=> state.languageReducer.language);
-  // const dispatch = useDispatch();
+  const {t,i18n} = useTranslation()
   
   return (
+  
     <Provider store={store}>
       <Notifications />
+      <StyledTitle>
+        <button onClick={() => i18n.changeLanguage('en')}>en</button>
+        <button onClick={() => i18n.changeLanguage('fr')}>fr</button>
+      </StyledTitle>
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         <GlobalStyles />
         <ToggleTheme theme={theme} toggleTheme={toggleTheme}/>
-        {/* <div>
-          <button  onClick={(()=>dispatch({type:'fr'}))}>français</button>
-          <button  onClick={(()=>dispatch({type:'en'}))}>anglais</button>
-        </div>    
-        <div className='titre'>
-            <h1>{translation(lang,"see")}</h1>
-        </div>   */}
+       
         <Routes/>
       </ThemeProvider>
     </Provider>

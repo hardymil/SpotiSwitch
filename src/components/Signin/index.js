@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import {StyledContainer, StyledSpan, StyledForm, StyledInput} from './styles';
 import Wave from 'react-wavify';
+import {useTranslation} from 'react-i18next'
+import '../../config/i18n'
 
 const Signin = ({ submit }) => {
   const [formState, setFormState] = useState({ username: '', password: '' })
@@ -12,6 +14,8 @@ const Signin = ({ submit }) => {
 
   const history = useHistory()
   console.log('history', history)
+
+  const {t, i18n} = useTranslation()
 
   return (
     <>
@@ -27,19 +31,19 @@ const Signin = ({ submit }) => {
       />
       <StyledContainer>
         <StyledForm onSubmit={e => submit(e, formState, setErrorMessage, history)}>
-          <StyledSpan>Signin</StyledSpan>
+        <StyledSpan>{t('Signin')}</StyledSpan>
           <StyledInput
-            placeholder='Username'
+            placeholder={t('Username')}
             type='text'
             onChange={e => setFormState({ ...formState, username: e.target.value })}
           ></StyledInput>
           <StyledInput
-            placeholder='password'
+            placeholder={t('Password')}
             type='password'
             onChange={e => setFormState({ ...formState, password: e.target.value })}
           ></StyledInput>
           <StyledSpan>{errorMessage}</StyledSpan>
-          <StyledInput type='submit'></StyledInput>
+        <StyledInput type='submit'></StyledInput>
         </StyledForm>
       </StyledContainer>
     </>

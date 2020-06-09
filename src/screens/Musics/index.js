@@ -4,6 +4,8 @@ import {getMusics} from '../../actions/musics'
 import Track from '../../components/Track'
 import styled from 'styled-components';
 import { ReactComponent as Disconnect } from '../../assets/img/turn-off.svg';
+import '../../config/i18n'
+import {useTranslation} from 'react-i18next'
 
 const StyledTitle = styled.h1`
   text-align: center;
@@ -47,10 +49,12 @@ const Musics = props => {
     localStorage.removeItem('token')
     props.history.push('/login')
   }
+
+  const {t,i18n} = useTranslation()
   return (
     <div> 
       <StyledDeconnect onClick={() => redirectToLogin()}><Disconnect/></StyledDeconnect>
-      <StyledTitle>Notre selection musicale que nous avons choisi pour vous :</StyledTitle>
+      <StyledTitle>{t('select')}</StyledTitle>
       <StyledFlex>
         {musics.map(music => (
             <Track

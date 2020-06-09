@@ -1,0 +1,20 @@
+{
+    "top":"top de la semaine",
+    "all":"pistes",
+    "pl":"lecture",
+    "search":"rechercher",
+    "see":"VOIR TOUT",
+    "get":"OBTENIR",
+    "browse":"Accueil",
+    "choose":"Choisissez la liste des genres que vous appréciez",
+    "select":"Notre selection musicale que nous avons choisi pour vous :",
+    "logout":"Déconnexion",
+    "toogle":"Basculer de thème",
+    "next":"Suivant",
+    "Among":"Parmi tous les genres musicaux que vous avez sélectionnés, vous ne découvriez aucune musique de ces genres. Prendre plaisir !",
+    "Signin":"S'authentifier",
+    "Username":"Nom d'utilisateur",
+    "Password":"Mot de passe",
+    "Submit":"Se connecter",
+    "Error":"Les champs ne doivent pas être vide"
+}

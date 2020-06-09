@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react'
 
 import Signin from '../components/Signin'
+import '../config/i18n'
+import {useTranslation} from 'react-i18next'
+
 
 const submit = (e, formState, setErrorMessage, history) => {
   e.preventDefault()
   if (!formState.username || !formState.password) {
+    
     setErrorMessage('Les champs ne doivent pas etre vide')
     return
   } else {
